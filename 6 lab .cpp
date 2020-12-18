@@ -29,6 +29,9 @@ public:
 	string getCountry() {
 		return country;
 	}
+	void newf() {
+		cout << "new function" << endl;
+	}
 	void Show() {
 		cout << "Страна команды: " << country << endl;
 		cout << "Название команды: " << name_team << endl;
@@ -59,6 +62,9 @@ public:
 	}
 	int getHowManyWinsy() {
 		return howManyWins;
+	}
+	void newf(){
+		cout << "1" << endl;
 	}
 	void Show() {
 		cout << "Кол-во игроков в команде: " << howManyPlayers << endl;
@@ -116,13 +122,13 @@ public:
 	string getSNamePlayer() {
 		return s_name_player;
 	}
-	/*void showAll() {
-		Voleyball::vShow();
-		Team::tShow();
-		Coach::cShow();
+	void show() {
+		Voleyball::Show();
+		Team::Show();
+		Coach::Show();
 		cout << "Имя игрока: " << name_player << endl;
 		cout << "Фамилия игрока: " << s_name_player << endl;
-	}*/
+	}
 };
 
 int chooseMenu();
@@ -256,13 +262,17 @@ int main() {
 			}
 			else
 				if (choose == 2) {
-					Player* player = NULL;
-					Player pla = *player;
+					/*Player* player = NULL;
+					Player pla = *player;*/
 					for (int i = 0; i < nPlayer; i++) {
-						//players[i].showAll();
-						pla.Voleyball::Show();
+						players[i].Voleyball::Show();
+						players[i].Team::Show();
+						players[i].Coach::Show();
+						players[i].newf();
+						/*pla.Voleyball::Show();
 						pla.Team::Show();
 						pla.Coach::Show();
+						pla.show1();*/
 						cout << endl;
 						cout << endl;
 					}
