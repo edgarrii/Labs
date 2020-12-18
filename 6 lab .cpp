@@ -30,8 +30,8 @@ public:
 		return country;
 	}
 	void show() {
-		cout << "Страна команды: " << country << endl;
-		cout << "Название команды: " << name_team << endl;
+		cout << "Г‘ГІГ°Г Г­Г  ГЄГ®Г¬Г Г­Г¤Г»: " << country << endl;
+		cout << "ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г»: " << name_team << endl;
 	}
 };
 
@@ -61,8 +61,8 @@ public:
 		return howManyWins;
 	}
 	void show() {
-		cout << "Кол-во игроков в команде: " << howManyPlayers << endl;
-		cout << "Кол-во выигранных матчей: " << howManyWins << endl;
+		cout << "ГЉГ®Г«-ГўГ® ГЁГЈГ°Г®ГЄГ®Гў Гў ГЄГ®Г¬Г Г­Г¤ГҐ: " << howManyPlayers << endl;
+		cout << "ГЉГ®Г«-ГўГ® ГўГ»ГЁГЈГ°Г Г­Г­Г»Гµ Г¬Г ГІГ·ГҐГ©: " << howManyWins << endl;
 	}
 };
 
@@ -89,8 +89,8 @@ public:
 		return s_name;
 	}
 	void show() {
-		cout << "Имя тренера: " << name << endl;
-		cout << "Фамилия тренера: " << s_name << endl;
+		cout << "Г€Г¬Гї ГІГ°ГҐГ­ГҐГ°Г : " << name << endl;
+		cout << "Г”Г Г¬ГЁГ«ГЁГї ГІГ°ГҐГ­ГҐГ°Г : " << s_name << endl;
 	}
 };
 
@@ -120,8 +120,8 @@ public:
 		Voleyball::show();
 		Team::show();
 		Coach::show();
-		cout << "Имя игрока: " << name_player << endl;
-		cout << "Фамилия игрока: " << s_name_player << endl;
+		cout << "Г€Г¬Гї ГЁГЈГ°Г®ГЄГ : " << name_player << endl;
+		cout << "Г”Г Г¬ГЁГ«ГЁГї ГЁГЈГ°Г®ГЄГ : " << s_name_player << endl;
 	}
 };
 
@@ -147,56 +147,56 @@ int main() {
 						if (choose2 == 8) break;
 						string ptr1; int ptr;
 						if (choose2 == 0) {
-							cout << "Введите название команды: ";
+							cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г»: ";
 							ptr1 = writeWords();
 							players[choose1].changeNameTeam(ptr1);
 							system("cls");
 						}
 						else
 							if (choose2 == 1) {
-								cout << "Введите страну команды: ";
+								cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г±ГІГ°Г Г­Гі ГЄГ®Г¬Г Г­Г¤Г»: ";
 								ptr1 = writeWords();
 								players[choose1].changeCountry(ptr1);
 								system("cls");
 							}
 							else
 								if (choose2 == 2) {
-									cout << "Введите кол-во игроков: ";
+									cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГЁГЈГ°Г®ГЄГ®Гў: ";
 									int ptr = writeNumbers();
 									players[choose1].changeHowManyPlayers(ptr);
 									system("cls");
 								}
 								else
 									if (choose2 == 3) {
-										cout << "Введите кол-во выигранных матчей: ";
+										cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГўГ»ГЁГЈГ°Г Г­Г­Г»Гµ Г¬Г ГІГ·ГҐГ©: ";
 										ptr = writeNumbers();
 										players[choose1].changeHowManyWins(ptr);
 										system("cls");
 									}
 									else
 										if (choose2 == 4) {
-											cout << "Введите имя тренера: ";
+											cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГІГ°ГҐГ­ГҐГ°Г : ";
 											ptr1 = writeWords();
 											players[choose1].changeName(ptr1);
 											system("cls");
 										}
 										else
 											if (choose2 == 5) {
-												cout << "Введите фамилию тренера: ";
+												cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГґГ Г¬ГЁГ«ГЁГѕ ГІГ°ГҐГ­ГҐГ°Г : ";
 												ptr1 = writeWords();
 												players[choose1].changeSName(ptr1);
 												system("cls");
 											}
 											else
 												if (choose2 == 6) {
-													cout << "Введите имя игрока: ";
+													cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГЁГЈГ°Г®ГЄГ : ";
 													ptr1 = writeWords();
 													players[choose1].changeNamePlayer(ptr1);
 													system("cls");
 												}
 												else
 													if (choose2 == 7) {
-														cout << "Введите фамилию игрока: ";
+														cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГґГ Г¬ГЁГ«ГЁГѕ ГЁГЈГ°Г®ГЄГ : ";
 														ptr1 = writeWords();
 														players[choose1].changeSNamePlayer(ptr1);
 														system("cls");
@@ -205,7 +205,7 @@ int main() {
 				}
 			}
 			else {
-				cout << "Вы еще не добавили историй" << endl;
+				cout << "Г‚Г» ГҐГ№ГҐ Г­ГҐ Г¤Г®ГЎГ ГўГЁГ«ГЁ ГЁГ±ГІГ®Г°ГЁГ©" << endl;
 				system("pause");
 				system("cls");
 			}
@@ -213,35 +213,35 @@ int main() {
 		else
 			if (choose == 0) {
 				Player sum;
-				cout << "Введите название команды: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г»: ";
 				string ptr1 = writeWords();
 				sum.changeNameTeam(ptr1);
 				system("cls");
-				cout << "Введите страну команды: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г±ГІГ°Г Г­Гі ГЄГ®Г¬Г Г­Г¤Г»: ";
 				ptr1 = writeWords();
 				sum.changeCountry(ptr1);
 				system("cls");
-				cout << "Введите кол-во игроков: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГЁГЈГ°Г®ГЄГ®Гў: ";
 				int ptr = writeNumbers();
 				sum.changeHowManyPlayers(ptr);
 				system("cls");
-				cout << "Введите кол-во выигранных матчей: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«-ГўГ® ГўГ»ГЁГЈГ°Г Г­Г­Г»Гµ Г¬Г ГІГ·ГҐГ©: ";
 				ptr = writeNumbers();
 				sum.changeHowManyWins(ptr);
 				system("cls");
-				cout << "Введите имя тренера: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГІГ°ГҐГ­ГҐГ°Г : ";
 				ptr1 = writeWords();
 				sum.changeName(ptr1);
 				system("cls");
-				cout << "Введите фамилию тренера: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГґГ Г¬ГЁГ«ГЁГѕ ГІГ°ГҐГ­ГҐГ°Г : ";
 				ptr1 = writeWords();
 				sum.changeSName(ptr1);
 				system("cls");
-				cout << "Введите имя игрока: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГЁГЈГ°Г®ГЄГ : ";
 				ptr1 = writeWords();
 				sum.changeNamePlayer(ptr1);
 				system("cls");
-				cout << "Введите фамилию игрока: ";
+				cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГґГ Г¬ГЁГ«ГЁГѕ ГЁГЈГ°Г®ГЄГ : ";
 				ptr1 = writeWords();
 				sum.changeSNamePlayer(ptr1);
 				system("cls");
@@ -330,20 +330,20 @@ int writeNumbers() {
 int chooseMenu() {
 	int choose_menu = 0, keyboard_button = 0;
 	while (true) {
-		cout << "Используя стрелочки Up и Down выберите необходимый пункт меню: " << endl;
+		cout << "Г€Г±ГЇГ®Г«ГјГ§ГіГї Г±ГІГ°ГҐГ«Г®Г·ГЄГЁ Up ГЁ Down ГўГ»ГЎГҐГ°ГЁГІГҐ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г»Г© ГЇГіГ­ГЄГІ Г¬ГҐГ­Гѕ: " << endl;
 		choose_menu = (choose_menu + 4) % 4;
 
-		if (choose_menu == 0) { cout << " -> Добавить игрока" << endl; }
-		else { cout << " Добавить игрока" << endl; }
+		if (choose_menu == 0) { cout << " -> Г„Г®ГЎГ ГўГЁГІГј ГЁГЈГ°Г®ГЄГ " << endl; }
+		else { cout << " Г„Г®ГЎГ ГўГЁГІГј ГЁГЈГ°Г®ГЄГ " << endl; }
 
-		if (choose_menu == 1) { cout << " -> Редактировать игроков" << endl; }
-		else { cout << " Редактировать игроков" << endl; }
+		if (choose_menu == 1) { cout << " -> ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ ГІГј ГЁГЈГ°Г®ГЄГ®Гў" << endl; }
+		else { cout << " ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ ГІГј ГЁГЈГ°Г®ГЄГ®Гў" << endl; }
 
-		if (choose_menu == 2) { cout << " -> Просмотр всех игроков" << endl; }
-		else { cout << " Просмотр всех игроков" << endl; }
+		if (choose_menu == 2) { cout << " -> ГЏГ°Г®Г±Г¬Г®ГІГ° ГўГ±ГҐГµ ГЁГЈГ°Г®ГЄГ®Гў" << endl; }
+		else { cout << " ГЏГ°Г®Г±Г¬Г®ГІГ° ГўГ±ГҐГµ ГЁГЈГ°Г®ГЄГ®Гў" << endl; }
 
-		if (choose_menu == 3) { cout << " -> Завершить программу" << endl; }
-		else { cout << " Завершить программу" << endl; }
+		if (choose_menu == 3) { cout << " -> Г‡Г ГўГҐГ°ГёГЁГІГј ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі" << endl; }
+		else { cout << " Г‡Г ГўГҐГ°ГёГЁГІГј ГЇГ°Г®ГЈГ°Г Г¬Г¬Гі" << endl; }
 
 		keyboard_button = _getch();
 		if (keyboard_button == 224) {
@@ -359,15 +359,15 @@ int chooseMenu() {
 int chooseWhoRed(Player*& players, int nPlayer) {
 	int choose_menu = 0, keyboard_button = 0;
 	while (true) {
-		cout << "Стрелочками ВВЕРХ и ВНИЗ выберите пункт меню" << endl;
+		cout << "Г‘ГІГ°ГҐГ«Г®Г·ГЄГ Г¬ГЁ Г‚Г‚Г…ГђГ• ГЁ Г‚ГЌГ€Г‡ ГўГ»ГЎГҐГ°ГЁГІГҐ ГЇГіГ­ГЄГІ Г¬ГҐГ­Гѕ" << endl;
 		choose_menu = (choose_menu + (nPlayer + 1)) % (nPlayer + 1);
 
 		for (int i = 0; i < nPlayer; i++)
 			if (i == choose_menu) { cout << " -> " << i + 1 << " - " << players[i].getName() << endl; }
 			else { cout << " " << i + 1 << " - " << players[i].getName() << endl; }
 
-		if (choose_menu == nPlayer) { cout << " -> Выйти с выбора игрока" << endl; }
-		else cout << " Выйти с выбора игрока" << endl;
+		if (choose_menu == nPlayer) { cout << " -> Г‚Г»Г©ГІГЁ Г± ГўГ»ГЎГ®Г°Г  ГЁГЈГ°Г®ГЄГ " << endl; }
+		else cout << " Г‚Г»Г©ГІГЁ Г± ГўГ»ГЎГ®Г°Г  ГЁГЈГ°Г®ГЄГ " << endl;
 
 		keyboard_button = _getch();
 		if (keyboard_button == 224) {
@@ -383,35 +383,35 @@ int chooseWhoRed(Player*& players, int nPlayer) {
 int chooseWhatRed(Player*& players, int choose) {
 	int choose_menu = 0, keyboard_button = 0;
 	while (true) {
-		cout << "Стрелочками ВВЕРХ и ВНИЗ выберите пункт меню" << endl;
+		cout << "Г‘ГІГ°ГҐГ«Г®Г·ГЄГ Г¬ГЁ Г‚Г‚Г…ГђГ• ГЁ Г‚ГЌГ€Г‡ ГўГ»ГЎГҐГ°ГЁГІГҐ ГЇГіГ­ГЄГІ Г¬ГҐГ­Гѕ" << endl;
 		choose_menu = (choose_menu + 9) % 9;
 
-		if (choose_menu == 0) { cout << " -> Название команды: " << players[choose].getNameTeam() << endl; }
-		else cout << " Название команды: " << players[choose].getNameTeam() << endl;
+		if (choose_menu == 0) { cout << " -> ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г»: " << players[choose].getNameTeam() << endl; }
+		else cout << " ГЌГ Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬Г Г­Г¤Г»: " << players[choose].getNameTeam() << endl;
 
-		if (choose_menu == 1) { cout << " -> Страна: " << players[choose].getCountry() << endl; }
-		else cout << " Тип Страна: " << players[choose].getCountry() << endl;
+		if (choose_menu == 1) { cout << " -> Г‘ГІГ°Г Г­Г : " << players[choose].getCountry() << endl; }
+		else cout << " Г’ГЁГЇ Г‘ГІГ°Г Г­Г : " << players[choose].getCountry() << endl;
 
-		if (choose_menu == 2) { cout << " -> Кол-во игроков: " << players[choose].getHowManyPlayers() << endl; }
-		else cout << " Кол-во игроков: " << players[choose].getHowManyPlayers() << endl;
+		if (choose_menu == 2) { cout << " -> ГЉГ®Г«-ГўГ® ГЁГЈГ°Г®ГЄГ®Гў: " << players[choose].getHowManyPlayers() << endl; }
+		else cout << " ГЉГ®Г«-ГўГ® ГЁГЈГ°Г®ГЄГ®Гў: " << players[choose].getHowManyPlayers() << endl;
 
-		if (choose_menu == 3) { cout << " -> Кол-во выигранных матчей: " << players[choose].getHowManyWinsy() << endl; }
-		else cout << " Кол-во выигранных матчей: " << players[choose].getHowManyWinsy() << endl;
+		if (choose_menu == 3) { cout << " -> ГЉГ®Г«-ГўГ® ГўГ»ГЁГЈГ°Г Г­Г­Г»Гµ Г¬Г ГІГ·ГҐГ©: " << players[choose].getHowManyWinsy() << endl; }
+		else cout << " ГЉГ®Г«-ГўГ® ГўГ»ГЁГЈГ°Г Г­Г­Г»Гµ Г¬Г ГІГ·ГҐГ©: " << players[choose].getHowManyWinsy() << endl;
 
-		if (choose_menu == 4) { cout << " -> Имя тренера: " << players[choose].getName() << endl; }
-		else cout << " Имя тренера: " << players[choose].getName() << endl;
+		if (choose_menu == 4) { cout << " -> Г€Г¬Гї ГІГ°ГҐГ­ГҐГ°Г : " << players[choose].getName() << endl; }
+		else cout << " Г€Г¬Гї ГІГ°ГҐГ­ГҐГ°Г : " << players[choose].getName() << endl;
 
-		if (choose_menu == 5) { cout << " -> Фамилия тренера: " << players[choose].getSName() << endl; }
-		else cout << " Фамилия тренера: " << players[choose].getSName() << endl;
+		if (choose_menu == 5) { cout << " -> Г”Г Г¬ГЁГ«ГЁГї ГІГ°ГҐГ­ГҐГ°Г : " << players[choose].getSName() << endl; }
+		else cout << " Г”Г Г¬ГЁГ«ГЁГї ГІГ°ГҐГ­ГҐГ°Г : " << players[choose].getSName() << endl;
 
-		if (choose_menu == 6) { cout << " -> Имя игрока: " << players[choose].getNamePlayer() << endl; }
-		else cout << " Имя игрока: " << players[choose].getNamePlayer() << endl;
+		if (choose_menu == 6) { cout << " -> Г€Г¬Гї ГЁГЈГ°Г®ГЄГ : " << players[choose].getNamePlayer() << endl; }
+		else cout << " Г€Г¬Гї ГЁГЈГ°Г®ГЄГ : " << players[choose].getNamePlayer() << endl;
 
-		if (choose_menu == 7) { cout << " -> Фамилия игрока: " << players[choose].getSNamePlayer() << endl; }
-		else cout << " Фамилия игрока: " << players[choose].getSNamePlayer() << endl;
+		if (choose_menu == 7) { cout << " -> Г”Г Г¬ГЁГ«ГЁГї ГЁГЈГ°Г®ГЄГ : " << players[choose].getSNamePlayer() << endl; }
+		else cout << " Г”Г Г¬ГЁГ«ГЁГї ГЁГЈГ°Г®ГЄГ : " << players[choose].getSNamePlayer() << endl;
 
-		if (choose_menu == 8) { cout << " -> Выйти в меню выбора " << endl; }
-		else cout << " Выйти в меню выбора " << endl;
+		if (choose_menu == 8) { cout << " -> Г‚Г»Г©ГІГЁ Гў Г¬ГҐГ­Гѕ ГўГ»ГЎГ®Г°Г  " << endl; }
+		else cout << " Г‚Г»Г©ГІГЁ Гў Г¬ГҐГ­Гѕ ГўГ»ГЎГ®Г°Г  " << endl;
 
 
 		keyboard_button = _getch();
