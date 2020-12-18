@@ -7,7 +7,7 @@
 
 using namespace std;
 
-int writeNumbers();
+double writeNumbers();
 int chooseMainMenu();
 int chooseEquation(string*, int);
 
@@ -75,13 +75,13 @@ public:
 
 
 template <typename T> void operator>>(istream& in, Equation<T>& ur) {
-	cout << "Введите коэффицент a: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕСЌС„С„РёС†РµРЅС‚ a: ";
 	ur.a = writeNumbers();
 	system("cls");
-	cout << "Введите коэффицент b: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕСЌС„С„РёС†РµРЅС‚ b: ";
 	ur.b = writeNumbers();
 	system("cls");
-	cout << "Введите коэффицент c: ";
+	cout << "Р’РІРµРґРёС‚Рµ РєРѕСЌС„С„РёС†РµРЅС‚ c: ";
 	ur.c = writeNumbers();
 	system("cls");
 }
@@ -120,8 +120,8 @@ int main() {
 					int choose1 = chooseEquation(aa, nEquation);
 					delete[]aa;
 					if (choose1 == nEquation) break;
-					cout << "Введите число на которое умножить коэффиценты: ";
-					int a = writeNumbers();
+					cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РЅР° РєРѕС‚РѕСЂРѕРµ СѓРјРЅРѕР¶РёС‚СЊ РєРѕСЌС„С„РёС†РµРЅС‚С‹: ";
+					double a = writeNumbers();
 					equation[choose1] *= a;
 				}
 				else
@@ -135,7 +135,7 @@ int main() {
 						if (choose2 == nEquation) break;
 						equation[choose1] = equation[choose1] - equation[choose2];
 						delete[]aa;
-						cout << "Вычетание прошло успешно!" << endl;
+						cout << "Р’С‹С‡РµС‚Р°РЅРёРµ РїСЂРѕС€Р»Рѕ СѓСЃРїРµС€РЅРѕ!" << endl;
 						system("pause");
 						system("cls");
 					}
@@ -150,20 +150,20 @@ int chooseMainMenu() {
 	while (true) {
 		choose_menu = (choose_menu + 5) % 5;
 
-		if (choose_menu == 0) cout << "-> Добавить уравнение" << endl;
-		else cout << " Добавить уравнение" << endl;
+		if (choose_menu == 0) cout << "-> Р”РѕР±Р°РІРёС‚СЊ СѓСЂР°РІРЅРµРЅРёРµ" << endl;
+		else cout << " Р”РѕР±Р°РІРёС‚СЊ СѓСЂР°РІРЅРµРЅРёРµ" << endl;
 
-		if (choose_menu == 1) cout << "-> Посмотреть уравнения и решить" << endl;
-		else cout << " Посмотреть уравнения и решить" << endl;
+		if (choose_menu == 1) cout << "-> РџРѕСЃРјРѕС‚СЂРµС‚СЊ СѓСЂР°РІРЅРµРЅРёСЏ Рё СЂРµС€РёС‚СЊ" << endl;
+		else cout << " РџРѕСЃРјРѕС‚СЂРµС‚СЊ СѓСЂР°РІРЅРµРЅРёСЏ Рё СЂРµС€РёС‚СЊ" << endl;
 
-		if (choose_menu == 2) cout << " -> Умножить коэфиценты на число" << endl;
-		else cout << " Умножить коэфиценты на число" << endl;
+		if (choose_menu == 2) cout << " -> РЈРјРЅРѕР¶РёС‚СЊ РєРѕСЌС„РёС†РµРЅС‚С‹ РЅР° С‡РёСЃР»Рѕ" << endl;
+		else cout << " РЈРјРЅРѕР¶РёС‚СЊ РєРѕСЌС„РёС†РµРЅС‚С‹ РЅР° С‡РёСЃР»Рѕ" << endl;
 
-		if (choose_menu == 3) cout << " -> Вычесть коэфиценты одного уравнение от другого" << endl;
-		else cout << " Вычесть коэфиценты одного уравнение от другого" << endl;
+		if (choose_menu == 3) cout << " -> Р’С‹С‡РµСЃС‚СЊ РєРѕСЌС„РёС†РµРЅС‚С‹ РѕРґРЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёРµ РѕС‚ РґСЂСѓРіРѕРіРѕ" << endl;
+		else cout << " Р’С‹С‡РµСЃС‚СЊ РєРѕСЌС„РёС†РµРЅС‚С‹ РѕРґРЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёРµ РѕС‚ РґСЂСѓРіРѕРіРѕ" << endl;
 
-		if (choose_menu == 4) cout << " -> Выход" << endl;
-		else cout << " Выход" << endl;
+		if (choose_menu == 4) cout << " -> Р’С‹С…РѕРґ" << endl;
+		else cout << " Р’С‹С…РѕРґ" << endl;
 
 		key = _getch();
 		if (key == 224) {
@@ -179,10 +179,10 @@ int chooseMainMenu() {
 	}
 }
 
-int writeNumbers() {
+double writeNumbers() {
 	string numbers;
 	while (true) {
-		int key;
+		double key;
 		key = _getch();
 		if (key == 224) {
 			key = _getch();
@@ -197,27 +197,27 @@ int writeNumbers() {
 			else
 				if (key == 13 && numbers.length() != 0 && numbers != "-") break;
 				else
-					if ((key >= '0' && key <= '9') || (key == '-' && numbers.length() == 0)) {
+					if ((key >= '0' && key <= '9') || (key == '-'  && numbers.length() == 0) || (key==',')) {
 						numbers = numbers + (char)key;
 						cout << (char)key;
 					}
 	}
 	cout << endl;
-	return stoi(numbers);
+	return stof(numbers);
 }
 
 int chooseEquation(string* a, int nEquation) {
 	int choose_menu = 0, keyboard_button = 0;
 	while (true) {
-		cout << "Стрелочками ВВЕРХ и ВНИЗ выберите пункт меню" << endl;
+		cout << "РЎС‚СЂРµР»РѕС‡РєР°РјРё Р’Р’Р•Р РҐ Рё Р’РќРР— РІС‹Р±РµСЂРёС‚Рµ РїСѓРЅРєС‚ РјРµРЅСЋ" << endl;
 		choose_menu = (choose_menu + (nEquation + 1)) % (nEquation + 1);
 
 		for (int i = 0; i < nEquation; i++)
 			if (i == choose_menu) { cout << " -> " << i + 1 << " - " << a[i] << endl; }
 			else { cout << " " << i + 1 << " - " << a[i] << endl; }
 
-		if (choose_menu == nEquation) { cout << " -> Выйти с выбора" << endl; }
-		else cout << " Выйти с выбора" << endl;
+		if (choose_menu == nEquation) { cout << " -> Р’С‹Р№С‚Рё СЃ РІС‹Р±РѕСЂР°" << endl; }
+		else cout << " Р’С‹Р№С‚Рё СЃ РІС‹Р±РѕСЂР°" << endl;
 
 		keyboard_button = _getch();
 		if (keyboard_button == 224) {
