@@ -30,51 +30,51 @@ public:
 };
 
 template <class T1>
-struct Status {
+struct Status {		//–°–æ—Å—Ç–æ—è–Ω–∏–µ —É–∫–∞–∑–∞—Ç–µ–ª—è
 	T1* RealPtr;
 	int Count;
 };
 
 template<class T1>
-class SmartDocument {
-	Status<T1>* StatPtr;
+class SmartDocument {	//–ö–ª–∞—Å—Å-—É–∫–∞–∑–∞—Ç–µ–ª—å
+	Status<T1>* StatusPtr;
 public:
 	T1* operator->()const {
-		if (StatPtr) return StatPtr->RealPtr;
+		if (StatusPtr) return StatusPtr->RealPtr;
 		else return NULL;
 	}
 	SmartDocument(T1* ptr = 0) {
-		if (!ptr) StatPtr = NULL;
+		if (!ptr) StatusPtr = NULL;
 		else {
-			StatPtr = new Status<T1>;
-			StatPtr->RealPtr = ptr;
-			StatPtr->Count = 1;
+			StatusPtr = new Status<T1>;
+			StatusPtr->RealPtr = ptr;
+			StatusPtr->Count = 1;
 		}
 	}
-	SmartDocument(const SmartDocument<T1>& p) :StatPtr(p.StatPtr) {
-		if (StatPtr) StatPtr->Count++;
+	SmartDocument(const SmartDocument<T1>& p) :StatusPtr(p.StatusPtr) {
+		if (StatusPtr) StatusPtr->Count++;
 	}
 	SmartDocument<T1>& operator=(const SmartDocument<T1>& p) {
-		if (StatPtr) {
-			StatPtr->Count--;
-			if (StatPtr->Count <= 0) {
-				delete StatPtr->RealPtr;
-				delete StatPtr;
+		if (StatusPtr) {
+			StatusPtr->Count--;
+			if (StatusPtr->Count <= 0) {
+				delete StatusPtr->RealPtr;
+				delete StatusPtr;
 			}
 		}
-		StatPtr = p.StatPtr;
-		if (StatPtr) StatPtr->Count++;
+		StatusPtr = p.StatusPtr;
+		if (StatusPtr) StatusPtr->Count++;
 		return *this;
 	}
 	~SmartDocument() {
-		if (StatPtr) {
-			StatPtr->Count--;
-			if (StatPtr->Count <= 0) {
-				delete StatPtr->RealPtr;
-				delete StatPtr;
+		if (StatusPtr) {
+			StatusPtr->Count--;
+			if (StatusPtr->Count <= 0) {
+				delete StatusPtr->RealPtr;
+				delete StatusPtr;
 			}
 		}
-		cout << "”Í‡Á‡ÚÂÎ¸ Û‰‡ÎÂÌ" << endl;
+		cout << "–£–∫–∞–∑–∞—Ç–µ–ª—å —É–¥–∞–ª–µ–Ω" << endl;
 	}
 };
 
@@ -94,29 +94,29 @@ int main() {
 				switch (mainMenu())
 				{
 				case 0:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛, ÍÓÚÓÛ˛ ÌÂÓ·ıÓ‰ËÏÓ ‰Ó·‡‚ËÚ¸:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é, –∫–æ—Ç–æ—Ä—É—é –Ω–µ–æ–±—Ö–æ–¥–∏–º–æ –¥–æ–±–∞–≤–∏—Ç—å:";
 					cin >> str;
 					pt1->Add(str);
 					break;
 				case 1:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛, ÍÓÚÓÛ˛ ÌÂÓ·ıÓ‰ËÏÓ ‰Ó·‡‚ËÚ¸:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é, –∫–æ—Ç–æ—Ä—É—é –Ω–µ–æ–±—Ö–æ–¥–∏–º–æ –¥–æ–±–∞–≤–∏—Ç—å:";
 					cin >> str;
 					pt3->Add(str);
 					break;
 				case 2:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é:";
 					cin >> str;
 					pt1->Change(str);
 					break;
 				case 3:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é:";
 					cin >> str;
 					pt3->Change(str);
 					break;
 				case 4:
-					cout << "\tƒÓÍÛÏÂÌÚ‡ˆËˇ π1" << endl;
+					cout << "\t –î–æ–∫—É–º–µ–Ω—Ç ‚Ññ1" << endl;
 					pt1->Show();
-					cout << "\tƒÓÍÛÏÂÌÚ‡ˆËˇ π2" << endl;
+					cout << "\t –î–æ–∫—É–º–µ–Ω—Ç ‚Ññ2" << endl;
 					pt3->Show();
 					system("pause");
 					break;
@@ -132,29 +132,29 @@ int main() {
 				switch (mainMenu())
 				{
 				case 0:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛, ÍÓÚÓÛ˛ ÌÂÓ·ıÓ‰ËÏÓ ‰Ó·‡‚ËÚ¸:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é, –∫–æ—Ç–æ—Ä—É—é –Ω–µ–æ–±—Ö–æ–¥–∏–º–æ –¥–æ–±–∞–≤–∏—Ç—å:";
 					cin >> str;
 					pt2->Add(str);
 					break;
 				case 1:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛, ÍÓÚÓÛ˛ ÌÂÓ·ıÓ‰ËÏÓ ‰Ó·‡‚ËÚ¸:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é, –∫–æ—Ç–æ—Ä—É—é –Ω–µ–æ–±—Ö–æ–¥–∏–º–æ –¥–æ–±–∞–≤–∏—Ç—å:";
 					cin >> str;
 					pt4->Add(str);
 					break;
 				case 2:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é:";
 					cin >> str;
 					pt2->Change(str);
 					break;
 				case 3:
-					cout << "¬‚Â‰ËÚÂ ËÌÙÓÏ‡ˆË˛:";
+					cout << "–í–≤–µ–¥–∏—Ç–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏—é:";
 					cin >> str;
 					pt4->Change(str);
 					break;
 				case 4:
-					cout << "\tƒÓÍÛÏÂÌÚ‡ˆËˇ π1" << endl;
+					cout << "\t–î–æ–∫—É–º–µ–Ω—Ç ‚Ññ1" << endl;
 					pt2->Show();
-					cout << "\tƒÓÍÛÏÂÌÚ‡ˆËˇ π2" << endl;
+					cout << "\t–î–æ–∫—É–º–µ–Ω—Ç ‚Ññ2" << endl;
 					pt4->Show();
 					system("pause");
 					break;
@@ -165,7 +165,7 @@ int main() {
 			}
 			break;
 		case 2:
-			cout << "ƒÓÍÛÏÂÌÚ‡ˆËˇ ÒÙÓÏËÓ‚‡Ì‡" << endl;
+			cout << "–î–æ–∫—É–º–µ–Ω—Ç —Å—Ñ–æ—Ä–º–∏—Ä–æ–≤–∞–Ω" << endl;
 			return 0;
 		}
 	}
@@ -180,23 +180,23 @@ int mainMenu()
 	{
 		choiceButton = (choiceButton + 6) % 6;
 
-		if (choiceButton == 0) cout << "-ƒÓ·‡‚ÎÂÌËÂ ËÌÙÓÏ‡ˆËË Í ‰ÓÍÛÏÂÌÚ‡ˆËË π1" << endl;
-		else cout << "ƒÓ·‡‚ÎÂÌËÂ ËÌÙÓÏ‡ˆËË Í ‰ÓÍÛÏÂÌÚ‡ˆËË π1" << endl;
+		if (choiceButton == 0) cout << "-–î–æ–±–∞–≤–ª–µ–Ω–∏–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ –∫ –¥–æ–∫—É–º–µ–Ω—Ç—É ‚Ññ1" << endl;
+		else cout << "–î–æ–±–∞–≤–ª–µ–Ω–∏–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ –∫ –¥–æ–∫—É–º–µ–Ω—Ç—É ‚Ññ1" << endl;
 
-		if (choiceButton == 1) cout << "-ƒÓ·‡‚ÎÂÌËÂ ËÌÙÓÏ‡ˆËË Í ‰ÓÍÛÏÂÌÚ‡ˆËË π2" << endl;
-		else cout << "ƒÓ·‡‚ÎÂÌËÂ ËÌÙÓÏ‡ˆËË Í ‰ÓÍÛÏÂÌÚ‡ˆËË π2" << endl;
+		if (choiceButton == 1) cout << "-–î–æ–±–∞–≤–ª–µ–Ω–∏–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ –∫ –¥–æ–∫—É–º–µ–Ω—Ç—É ‚Ññ2" << endl;
+		else cout << "–î–æ–±–∞–≤–ª–µ–Ω–∏–µ –∏–Ω—Ñ–æ—Ä–º–∞—Ü–∏–∏ –∫ –¥–æ–∫—É–º–µ–Ω—Ç—É ‚Ññ2" << endl;
 
-		if (choiceButton == 2) cout << "-»ÁÏÂÌÂÌËÂ ‰ÓÍÛÏÂÌÚ‡ˆËË π1" << endl;
-		else cout << "»ÁÏÂÌÂÌËÂ ‰ÓÍÛÏÂÌÚ‡ˆËË π1" << endl;
+		if (choiceButton == 2) cout << "-–ò–∑–º–µ–Ω–µ–Ω–∏–µ –¥–æ–∫—É–º–µ–Ω—Ç–∞ ‚Ññ1" << endl;
+		else cout << "–ò–∑–º–µ–Ω–µ–Ω–∏–µ –¥–æ–∫—É–º–µ–Ω—Ç–∞ ‚Ññ1" << endl;
 
-		if (choiceButton == 3) cout << "-»ÁÏÂÌÂÌËÂ ‰ÓÍÛÏÂÌÚ‡ˆËË π2" << endl;
-		else cout << "»ÁÏÂÌÂÌËÂ ‰ÓÍÛÏÂÌÚ‡ˆËË π2" << endl;
+		if (choiceButton == 3) cout << "-–ò–∑–º–µ–Ω–µ–Ω–∏–µ –¥–æ–∫—É–º–µ–Ω—Ç–∞ ‚Ññ2" << endl;
+		else cout << "–ò–∑–º–µ–Ω–µ–Ω–∏–µ –¥–æ–∫—É–º–µ–Ω—Ç–∞ ‚Ññ2" << endl;
 
-		if (choiceButton == 4) cout << "-œÓÒÏÓÚ ‚ÒÂÈ ‰ÓÍÛÏÂÌÚ‡ˆËË" << endl;
-		else cout << "œÓÒÏÓÚ ‚ÒÂÈ ‰ÓÍÛÏÂÌÚ‡ˆËË" << endl;
+		if (choiceButton == 4) cout << "-–ü—Ä–æ—Å–º–æ—Ç—Ä –≤—Å–µ—Ö –¥–æ–∫—É–º–µ–Ω—Ç–æ–≤" << endl;
+		else cout << "–ü—Ä–æ—Å–º–æ—Ç—Ä –≤—Å–µ—Ö –¥–æ–∫—É–º–µ–Ω—Ç–æ–≤" << endl;
 
-		if (choiceButton == 5) cout << "-¬˚ıÓ‰" << endl;
-		else cout << "¬˚ıÓ‰" << endl;
+		if (choiceButton == 5) cout << "-–í—ã—Ö–æ–¥" << endl;
+		else cout << "–í—ã—Ö–æ–¥" << endl;
 
 		button = _getch();
 		if (button == 224)
@@ -221,14 +221,14 @@ int menuOfClients()
 	{
 		choiceButton = (choiceButton + 3) % 3;
 
-		if (choiceButton == 0) cout << "-—ÓÚÛ‰ÌËÍ π1" << endl;
-		else cout << "—ÓÚÛ‰ÌËÍ π1" << endl;
+		if (choiceButton == 0) cout << "-–°–æ—Ç—Ä—É–¥–Ω–∏–∫ ‚Ññ1" << endl;
+		else cout << "–°–æ—Ç—Ä—É–¥–Ω–∏–∫ ‚Ññ1" << endl;
 
-		if (choiceButton == 1) cout << "-—ÓÚÛ‰ÌËÍ π2" << endl;
-		else cout << "—ÓÚÛ‰ÌËÍ π2" << endl;
+		if (choiceButton == 1) cout << "-–°–æ—Ç—Ä—É–¥–Ω–∏–∫ ‚Ññ2" << endl;
+		else cout << "–°–æ—Ç—Ä—É–¥–Ω–∏–∫ ‚Ññ2" << endl;
 
-		if (choiceButton == 2) cout << "-«‡‚Â¯ËÚ¸ ‡·ÓÚÛ Ò ‰ÓÍÛÏÂÌÚ‡ˆËÂÈ" << endl;
-		else cout << "«‡‚Â¯ËÚ¸ ‡·ÓÚÛ Ò ‰ÓÍÛÏÂÌÚ‡ˆËÂÈ" << endl;
+		if (choiceButton == 2) cout << "-–ó–∞–≤–µ—Ä—à–∏—Ç—å —Ä–∞–±–æ—Ç—É —Å –¥–æ–∫—É–º–µ–Ω—Ç–∞–º–∏" << endl;
+		else cout << "–ó–∞–≤–µ—Ä—à–∏—Ç—å —Ä–∞–±–æ—Ç—É —Å –¥–æ–∫—É–º–µ–Ω—Ç–∞–º–∏" << endl;
 
 		button = _getch();
 		if (button == 224)
